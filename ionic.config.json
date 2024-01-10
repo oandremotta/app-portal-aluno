@@ -1,0 +1,7 @@
+{
+  "name": "appPortalAluno",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
