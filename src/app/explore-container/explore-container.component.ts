@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-explore-container',
@@ -6,6 +6,12 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./explore-container.component.scss'],
   standalone: true,
 })
-export class ExploreContainerComponent {
-  @Input() name?: string;
+export class ExploreContainerComponent implements OnInit {
+  @Input() name: string = "";
+  @Input() descricao: string = "";
+
+  constructor() { }
+
+  ngOnInit() { }
+
 }

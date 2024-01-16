@@ -1,17 +1,121 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
+<ion-header translucent="false" class="ion-no-border">
+  <ion-toolbar class="ion-text-center">
+    <ion-text>
+      <strong>E.M São José dos Campos</strong>
+      <!-- <ion-icon slot=" end" name="chevron-down-outline" color="ion-textrimary" size="small"></ion-icon> -->
+    </ion-text>
   </ion-toolbar>
+
+
+  <ion-toolbar style="--min-height:0; margin-top:-5px">
+    <div class="ion-text-center">
+      <ion-text>Olá, Murilo</ion-text>
+    </div>
+    <ion-segment scrollable="true">
+      <ion-segment-button value="restaurantes">
+        <ion-label>Restaurantes</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="mercados">
+        <ion-label>Mercados</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div>
+    <div style="overflow: auto;" class="hideScroll">
+      <div style="width:max-content;">
+        <ion-chip color="medium" outline="true">
+          <ion-label color="dark">Ordenar <ion-icon name="chevron-down-outline" color="primary"
+              style="margin-bottom: -2px;"></ion-icon>
+          </ion-label>
+        </ion-chip>
+        <ion-chip color="primary">
+          <ion-label color="primary">
+            <ion-icon name="walk-sharp"></ion-icon> Para retirar
+          </ion-label>
+        </ion-chip>
+        <ion-chip color="medium" outline="true">
+          <ion-label color="dark">Entrega grátis</ion-label>
+        </ion-chip>
+        <ion-chip color="medium" outline="true">
+          <ion-label color="dark">Secondary</ion-label>
+        </ion-chip>
+      </div>
+    </div>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+    <swiper-container pager="true" #slider class="my-custom-slider">
+      <swiper-slide>
+        <img src="https://static-images.ifood.com.br/image/upload/t_high,q_100/webapp/landing/landing-banner-1.png" />
+      </swiper-slide>
+      <swiper-slide>
+        <img src="https://static-images.ifood.com.br/image/upload/t_high,q_100/webapp/landing/landing-banner-2.png" />
+      </swiper-slide>
+      <swiper-slide>
+        <img src="https://static-images.ifood.com.br/image/upload/t_high,q_100/webapp/landing/landing-banner-3.png" />
+      </swiper-slide>
+
+    </swiper-container>
+
+
+    <ion-list lines="none">
+      <ion-list-header>Lojas</ion-list-header>
+
+      <ion-item button detail="false">
+        <ion-avatar slot="start" style="width:45px; height:45px;">
+          <img src="https://ionicframework.com/docs/demos/api/list/avatar-finn.png">
+        </ion-avatar>
+        <ion-label>
+          <h3><strong>Nome loja</strong></h3>
+          <p>
+            <ion-text color="warning">
+              <ion-icon name="star-sharp"></ion-icon> 4,6
+            </ion-text> .
+            <ion-text color="medium">Pizza</ion-text> .
+            <ion-text color="medium">6,2 km</ion-text>
+          </p>
+          <p>
+            <ion-text color="medium">40-55 min . R$6,00</ion-text>
+          </p>
+          <p>
+            <ion-chip color="warning">
+              <ion-label>
+                <ion-icon name="star-sharp"></ion-icon>
+                Peça 3 vezes, e ganhe R$ 10
+              </ion-label>
+            </ion-chip>
+          </p>
+        </ion-label>
+      </ion-item>
+      <ion-item button detail="false" *ngFor="let i of [].constructor(10)">
+        <ion-avatar slot="start" style="width:45px; height:45px;">
+          <img src="https://ionicframework.com/docs/demos/api/list/avatar-finn.png">
+        </ion-avatar>
+        <ion-label>
+          <h3><strong>Nome loja</strong></h3>
+          <p>
+            <ion-text color="warning">
+              <ion-icon name="star-sharp"></ion-icon> 4,6
+            </ion-text> .
+            <ion-text color="medium">Pizza</ion-text> .
+            <ion-text color="medium">6,2 km</ion-text>
+          </p>
+          <p>
+            <ion-text color="medium">40-55 min . R$6,00</ion-text>
+          </p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+
+
+
+
+
+    <!-- <app-explore-container name="Tab 1 page" descricao="lorem ipsum dolore 1"></app-explore-container> -->
+
+
+  </div>
+
 </ion-content>

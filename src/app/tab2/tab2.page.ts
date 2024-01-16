@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, Component } from '@angular/core';
 import { IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/angular/standalone';
 import { ExploreContainerComponent } from '../explore-container/explore-container.component';
 
@@ -7,10 +7,11 @@ import { ExploreContainerComponent } from '../explore-container/explore-containe
   templateUrl: 'tab2.page.html',
   styleUrls: ['tab2.page.scss'],
   standalone: true,
-  imports: [IonHeader, IonToolbar, IonTitle, IonContent, ExploreContainerComponent]
+  imports: [IonHeader, IonToolbar, IonTitle, IonContent, ExploreContainerComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class Tab2Page {
 
-  constructor() {}
+  constructor() { }
 
 }
