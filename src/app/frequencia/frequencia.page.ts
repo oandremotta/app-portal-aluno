@@ -5,12 +5,12 @@ import { IonicModule } from '@ionic/angular';
 import { HeaderComponent } from '../componentes/header/header.component';
 
 @Component({
-  selector: 'app-meus-dados',
-  templateUrl: 'meus-dados.page.html',
-  styleUrls: ['meus-dados.page.scss'],
+  selector: 'app-frequencia',
+  templateUrl: 'frequencia.page.html',
+  styleUrls: ['frequencia.page.scss'],
   standalone: true,
   imports: [IonicModule, CommonModule, FormsModule, ReactiveFormsModule, HeaderComponent]
 })
-export class MeusDadosPage {
+export class FrequenciaPage {
   constructor() { }
 }

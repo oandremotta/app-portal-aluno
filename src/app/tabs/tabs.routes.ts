@@ -17,9 +17,9 @@ export const routes: Routes = [
           import('../tab2/tab2.page').then((m) => m.Tab2Page),
       },
       {
-        path: 'tab3',
+        path: 'boletins',
         loadComponent: () =>
-          import('../tab3/tab3.page').then((m) => m.Tab3Page),
+          import('../boletins/boletins.page').then((m) => m.BoletinsPage),
       },
       {
         path: 'tab4',
@@ -30,6 +30,43 @@ export const routes: Routes = [
         path: 'meus-dados',
         loadComponent: () =>
           import('../meus-dados/meus-dados.page').then((m) => m.MeusDadosPage),
+      },
+      {
+        path: 'eventos',
+        loadComponent: () =>
+          import('../eventos/eventos.page').then((m) => m.EventosPage),
+        children: [
+          {
+            path: ':id',
+            loadComponent: () =>
+              import('../eventos/evento-detalhes/evento-detalhes.page').then((m) => m.EventoDetalhesPage),
+          }
+        ]
+      },
+      {
+        path: 'frequencia',
+        loadComponent: () =>
+          import('../frequencia/frequencia.page').then((m) => m.FrequenciaPage),
+      },
+      {
+        path: 'horario-de-aulas',
+        loadComponent: () =>
+          import('../horario-de-aulas/horario-de-aulas.page').then((m) => m.HorarioDeAulasPage),
+      },
+      {
+        path: 'merenda',
+        loadComponent: () =>
+          import('../merenda/merenda.page').then((m) => m.MerendaPage),
+      },
+      {
+        path: 'comunicados',
+        loadComponent: () =>
+          import('../comunicados/comunicados.page').then((m) => m.ComunicadosPage),
+      },
+      {
+        path: 'carteirinha',
+        loadComponent: () =>
+          import('../carteirinha/carteirinha.page').then((m) => m.CarteirinhaPage),
       },
       {
         path: '',

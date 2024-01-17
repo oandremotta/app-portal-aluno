@@ -5,12 +5,12 @@ import { IonicModule } from '@ionic/angular';
 import { HeaderComponent } from '../componentes/header/header.component';
 
 @Component({
-  selector: 'app-meus-dados',
-  templateUrl: 'meus-dados.page.html',
-  styleUrls: ['meus-dados.page.scss'],
+  selector: 'app-merenda',
+  templateUrl: 'merenda.page.html',
+  styleUrls: ['merenda.page.scss'],
   standalone: true,
   imports: [IonicModule, CommonModule, FormsModule, ReactiveFormsModule, HeaderComponent]
 })
-export class MeusDadosPage {
+export class MerendaPage {
   constructor() { }
 }

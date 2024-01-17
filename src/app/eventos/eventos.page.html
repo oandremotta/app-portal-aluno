@@ -1,0 +1,85 @@
+<app-header title="Eventos"></app-header>
+
+<ion-content class="ion-padding">
+
+  <ion-list lines="none">
+    <!-- <ion-list-header>Lojas</ion-list-header> -->
+
+    @for(evento of eventos; track evento.id){
+    <ion-item button detail="false" [href]="'/tabs/eventos/' + evento.id">
+      <ion-avatar slot="start" style="width:45px; height:45px;">
+        <img src="https://ionicframework.com/docs/demos/api/list/avatar-finn.png">
+      </ion-avatar>
+      <ion-label>
+        <h3><strong>{{evento.titulo}}</strong></h3>
+        <p>
+          <ion-text color="warning">
+            <ion-icon name="star-sharp"></ion-icon> {{evento.convite.text}}
+          </ion-text> .
+          <!-- <ion-text color="medium">Pizza</ion-text> .
+          <ion-text color="medium">6,2 km</ion-text> -->
+        </p>
+        <p>
+          <ion-text color="medium">{{evento.subtitulo}}</ion-text>
+        </p>
+        <p>
+          <ion-chip color="warning">
+            <ion-text>
+              Início {{evento.dataInicio | date : "dd/MM/y"}}
+            </ion-text>
+          </ion-chip>
+          <ion-chip color="warning">
+            <ion-text>
+              Fim {{evento.dataTermino | date : "dd/MM/y"}}
+            </ion-text>
+          </ion-chip>
+        </p>
+      </ion-label>
+    </ion-item>
+    }
+    <ion-item button detail="false">
+      <ion-avatar slot="start" style="width:45px; height:45px;">
+        <img src="https://ionicframework.com/docs/demos/api/list/avatar-finn.png">
+      </ion-avatar>
+      <ion-label>
+        <h3><strong>Nome loja</strong></h3>
+        <p>
+          <ion-text color="warning">
+            <ion-icon name="star-sharp"></ion-icon> 4,6
+          </ion-text> .
+          <ion-text color="medium">Pizza</ion-text> .
+          <ion-text color="medium">6,2 km</ion-text>
+        </p>
+        <p>
+          <ion-text color="medium">40-55 min . R$6,00</ion-text>
+        </p>
+        <p>
+          <ion-chip color="warning">
+            <ion-label>
+              <ion-icon name="star-sharp"></ion-icon>
+              Peça 3 vezes, e ganhe R$ 10
+            </ion-label>
+          </ion-chip>
+        </p>
+      </ion-label>
+    </ion-item>
+    <ion-item button detail="false" *ngFor="let i of [].constructor(10)">
+      <ion-avatar slot="start" style="width:45px; height:45px;">
+        <img src="https://ionicframework.com/docs/demos/api/list/avatar-finn.png">
+      </ion-avatar>
+      <ion-label>
+        <h3><strong>Nome loja</strong></h3>
+        <p>
+          <ion-text color="warning">
+            <ion-icon name="star-sharp"></ion-icon> 4,6
+          </ion-text> .
+          <ion-text color="medium">Pizza</ion-text> .
+          <ion-text color="medium">6,2 km</ion-text>
+        </p>
+        <p>
+          <ion-text color="medium">40-55 min . R$6,00</ion-text>
+        </p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

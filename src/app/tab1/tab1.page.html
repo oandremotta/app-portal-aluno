@@ -11,53 +11,37 @@
     <div class="ion-text-center">
       <ion-text>Olá, Murilo</ion-text>
     </div>
-    <ion-segment scrollable="true">
-      <ion-segment-button value="restaurantes">
-        <ion-label>Restaurantes</ion-label>
+    <!-- <ion-segment scrollable="true" (ionChange)="segmentChanged($event)" value="inicio">
+      <ion-segment-button value="inicio">
+        <ion-label>Início</ion-label>
       </ion-segment-button>
-      <ion-segment-button value="mercados">
-        <ion-label>Mercados</ion-label>
+      <ion-segment-button value="horarioDeAulas">
+        <ion-label>Horário de Aulas</ion-label>
       </ion-segment-button>
-    </ion-segment>
+    </ion-segment> -->
   </ion-toolbar>
 
 </ion-header>
 
+
+
 <ion-content [fullscreen]="true">
   <div>
-    <div style="overflow: auto;" class="hideScroll">
-      <div style="width:max-content;">
-        <ion-chip color="medium" outline="true">
-          <ion-label color="dark">Ordenar <ion-icon name="chevron-down-outline" color="primary"
-              style="margin-bottom: -2px;"></ion-icon>
-          </ion-label>
-        </ion-chip>
-        <ion-chip color="primary">
-          <ion-label color="primary">
-            <ion-icon name="walk-sharp"></ion-icon> Para retirar
-          </ion-label>
-        </ion-chip>
-        <ion-chip color="medium" outline="true">
-          <ion-label color="dark">Entrega grátis</ion-label>
-        </ion-chip>
-        <ion-chip color="medium" outline="true">
-          <ion-label color="dark">Secondary</ion-label>
-        </ion-chip>
-      </div>
-    </div>
+    <ion-list lines="none">
+      <!-- <ion-list-header>Mural de avisos</ion-list-header> -->
+      <swiper-container pager="false" #slider class="my-custom-slider ion-text-center">
+        <swiper-slide>
+          <img src="https://static-images.ifood.com.br/image/upload/t_high,q_100/webapp/landing/landing-banner-1.png" />
+        </swiper-slide>
+        <swiper-slide>
+          <img src="https://static-images.ifood.com.br/image/upload/t_high,q_100/webapp/landing/landing-banner-2.png" />
+        </swiper-slide>
+        <swiper-slide>
+          <img src="https://static-images.ifood.com.br/image/upload/t_high,q_100/webapp/landing/landing-banner-3.png" />
+        </swiper-slide>
 
-    <swiper-container pager="true" #slider class="my-custom-slider">
-      <swiper-slide>
-        <img src="https://static-images.ifood.com.br/image/upload/t_high,q_100/webapp/landing/landing-banner-1.png" />
-      </swiper-slide>
-      <swiper-slide>
-        <img src="https://static-images.ifood.com.br/image/upload/t_high,q_100/webapp/landing/landing-banner-2.png" />
-      </swiper-slide>
-      <swiper-slide>
-        <img src="https://static-images.ifood.com.br/image/upload/t_high,q_100/webapp/landing/landing-banner-3.png" />
-      </swiper-slide>
-
-    </swiper-container>
+      </swiper-container>
+    </ion-list>
 
 
     <ion-list lines="none">
@@ -108,14 +92,6 @@
         </ion-label>
       </ion-item>
     </ion-list>
-
-
-
-
-
-    <!-- <app-explore-container name="Tab 1 page" descricao="lorem ipsum dolore 1"></app-explore-container> -->
-
-
   </div>
 
 </ion-content>
