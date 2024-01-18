@@ -1,0 +1,29 @@
+<ion-content class="ion-padding ion-text-center">
+  <!-- Logotipo no centro -->
+  <ion-row class="ion-justify-content-center ion-align-items-center ion-text-center">
+    <img [src]="'https://alunos.educafrancodarocha.com.br/assets/images/educa-franco.png'" class="logo" alt="Logotipo">
+  </ion-row>
+
+  <ion-item>
+    <ion-title class="text">
+      Entrar
+    </ion-title>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">RA</ion-label>
+    <ion-input [(ngModel)]="email" type="email"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Senha</ion-label>
+    <ion-input [(ngModel)]="password" type="password"></ion-input>
+  </ion-item>
+
+  <!-- Botão de login -->
+  <ion-button expand="full" (click)="login()" class="ion-margin-top">Login</ion-button>
+
+  <!-- Link "Precisa de Ajuda?" -->
+  <div class="ion-margin-top ion-text-end">
+    <a href="ajuda">Precisa de Ajuda?</a>
+  </div>
+</ion-content>
