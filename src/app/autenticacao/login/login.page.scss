@@ -1,6 +1,67 @@
-.logo {
+.login-page {
+    height: 100%;
+    width: 100%;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
+    flex-direction: column;
+
+    & > .message {
+        font-family: UnimedSans;
+        font-size: 14px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.45;
+        letter-spacing: normal;
+        padding-top: 15px;
+        padding-bottom: 0px;
+        margin: 0px;
+    }
+
+    & > .main {
+        flex: 1;
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .login-form {
+
+        & > .advice {
+            font-family: UnimedSans;
+            font-size: 12px;
+            font-weight: 600;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1.88;
+            letter-spacing: normal;
+        }
+    }
+
+
+    & > .footer {
+        height: 128px;
+
+        & > .buttons-wrapper {
+            height: 80px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    .buttons-wrapper > .link {
+        text-align: center;
+        box-sizing: border-box;
+        width: 50%;
+        font-family: "UnimedSans";
+        font-size: 12px;
+        font-weight: 600;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: var(--ion-color-tertiary);
+    }
 }

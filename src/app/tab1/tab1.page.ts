@@ -4,13 +4,15 @@ import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } 
 import { IonicModule } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { HorarioDeAulasPage } from '../horario-de-aulas/horario-de-aulas.page';
+import { HeaderComponent } from '../componentes/header/header.component';
+import { AcessoRapidoComponent } from '../componentes/acesso-rapido/acesso-rapido.component';
 
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
   styleUrls: ['tab1.page.scss'],
   standalone: true,
-  imports: [IonicModule, CommonModule, FormsModule, ReactiveFormsModule, HorarioDeAulasPage],
+  imports: [IonicModule, CommonModule, FormsModule, ReactiveFormsModule, HorarioDeAulasPage, HeaderComponent, AcessoRapidoComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class Tab1Page {

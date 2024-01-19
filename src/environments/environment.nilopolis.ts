@@ -3,19 +3,19 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: true,
-  apiphp: "https://api.educafrancodarocha.com.br/api/v1/",
-  apiUrlCms: "https://api.educafrancodarocha.com.br/api/v1/",
-  tenant: "francodarocha",
-  nomeTenant: "Franco da Rocha",
-  nome_extenso: "App Franco da Rocha",
-  theme: "francodarocha",
+  production: false,
+  apiphp: "https://api.nilopolis.com.br/api/v1/",
+  apiUrlCms: "https://api.nilopolis.com.br/api/v1/",
+  tenant: "nilopolis",
+  nomeTenant: "Nilopolis",
+  nome_extenso: "App Nilopolis",
+  theme: "nilopolis",
   rn_login: "",
   rn_cadastro: "",
   senderID: "",
   app_id: "",
-  app_name: "Franco da Rocha",
-  app_description: "Aplicativo de Franco da Rocha.",
+  app_name: "Nilopolis",
+  app_description: "Aplicativo de Nilopolis.",
   app_url_applestore: "",
   app_url_googleplay: "",
   author_name: "Multifacil Soluções em Tecnologia",
@@ -27,7 +27,7 @@ export const environment = {
   bundle_id_ios: "",
   app_id_ios: "",
   idTenant: 2,
-  assetImgUri: "francodarocha",
+  assetImgUri: "nilopolis",
   mensagemOrientacaoLogin: "Se você tinha acesso ao app antigo, não será preciso fazer um <strong>novo cadastro.</strong>",
 };
 

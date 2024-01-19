@@ -1,29 +1,57 @@
-<ion-content class="ion-padding ion-text-center">
-  <!-- Logotipo no centro -->
-  <ion-row class="ion-justify-content-center ion-align-items-center ion-text-center">
-    <img [src]="'https://alunos.educafrancodarocha.com.br/assets/images/educa-franco.png'" class="logo" alt="Logotipo">
+<ion-content class="ion-padding">
+  <!-- Logotipo -->
+  <ion-row class="ion-justify-content-center ion-align-items-center ion-margin-vertical">
+    <ion-col size="12" class="ion-text-center">
+      <img src="assets/img/{{environment.assetImgUri}}.png" />
+    </ion-col>
   </ion-row>
 
-  <ion-item>
-    <ion-title class="text">
-      Entrar
-    </ion-title>
-  </ion-item>
-  <ion-item>
-    <ion-label position="floating">RA</ion-label>
-    <ion-input [(ngModel)]="email" type="email"></ion-input>
-  </ion-item>
 
-  <ion-item>
-    <ion-label position="floating">Senha</ion-label>
-    <ion-input [(ngModel)]="password" type="password"></ion-input>
-  </ion-item>
+  <ion-col>
+    <ion-row class="ion-justify-content-center ion-align-items-center ion-margin-bottom">
+      <ion-col size="12" class="ion-text-center">
+        <ion-title class="text">Entrar com Matrícula</ion-title>
+      </ion-col>
+    </ion-row>
 
-  <!-- Botão de login -->
-  <ion-button expand="full" (click)="login()" class="ion-margin-top">Login</ion-button>
+    <!-- Campo RA -->
+    <ion-row class="ion-justify-content-center ion-align-items-center ion-margin-bottom">
+      <ion-col size="12" class="ion-text-center">
+        <ion-item>
+          <ion-label position="floating">RA*</ion-label>
+          <ion-input [(ngModel)]="email" type="email"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
 
-  <!-- Link "Precisa de Ajuda?" -->
-  <div class="ion-margin-top ion-text-end">
-    <a href="ajuda">Precisa de Ajuda?</a>
-  </div>
+    <!-- Campo Senha -->
+    <ion-row class="ion-justify-content-center ion-align-items-center ion-margin-bottom">
+      <ion-col size="12" class="ion-text-center">
+        <ion-item>
+          <ion-label position="floating">Senha</ion-label>
+          <ion-input [(ngModel)]="password" type="password"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <!-- Botão de login -->
+    <ion-row class="ion-justify-content-center ion-align-items-center ion-margin-bottom">
+      <ion-col size="12" class="ion-text-center">
+        <ion-button expand="full" (click)="login()">Entrar</ion-button>
+        <div class="ion-margin-top ion-text-end">
+          <a href="ajuda">Precisa de Ajuda?</a>
+        </div>
+
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="ion-justify-content-center ion-align-items-center">
+      <ion-col size="12" class="ion-text-center">
+        <div class="ion-margin-top">
+          <ion-text>Não possui acesso?<br /> Entre em contato com sua escola.</ion-text>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-col>
+
 </ion-content>

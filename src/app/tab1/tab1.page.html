@@ -1,115 +1,17 @@
-<ion-header translucent="false" class="ion-no-border">
-  <ion-toolbar class="ion-text-center">
-    <ion-text>
-      <strong>E.M São José dos Campos</strong>
-      <!-- <ion-icon slot=" end" name="chevron-down-outline" color="ion-textrimary" size="small"></ion-icon> -->
-    </ion-text>
-  </ion-toolbar>
-
-
-  <ion-toolbar style="--min-height:0; margin-top:-5px">
-    <div class="ion-text-center">
-      <ion-text>Olá, Murilo</ion-text>
-    </div>
-    <!-- <ion-segment scrollable="true" (ionChange)="segmentChanged($event)" value="inicio">
-      <ion-segment-button value="inicio">
-        <ion-label>Início</ion-label>
-      </ion-segment-button>
-      <ion-segment-button value="horarioDeAulas">
-        <ion-label>Horário de Aulas</ion-label>
-      </ion-segment-button>
-    </ion-segment> -->
-  </ion-toolbar>
-
-</ion-header>
-
-
-
+<app-header title="Murilo Cabral"></app-header>
 <ion-content [fullscreen]="true">
   <div>
     <!-- <ion-list-header>Mural de avisos</ion-list-header> -->
-    <ion-list lines="none">
-      <ion-list-header>Acesso Rápido</ion-list-header>
-      <swiper-container pager="false" [slidesPerView]="4" [loop]="false" #slider
-        class="my-custom-slider ion-text-center">
-        <swiper-slide>
-          <ion-item style="width: 100%; border: none; --ion-item-padding-start: 0;">
-            <ion-thumbnail slot="start" style="width: 30px; height: 30px; margin-end: 10px;">
-              <ion-icon style="width: 100%; height: 100%" name="add-outline"></ion-icon>
-            </ion-thumbnail>
-            <ion-label style="display: flex; align-items: center;">
-              <p>Acesso Rápido</p>
-            </ion-label>
-          </ion-item>
-        </swiper-slide>
-        <swiper-slide>
-          <ion-item style="width: 100%; border: none; --ion-item-padding-start: 0;">
-            <ion-thumbnail slot="start" style="width: 30px; height: 30px; margin-end: 10px;">
-              <ion-icon style="width: 100%; height: 100%" name="add-outline"></ion-icon>
-            </ion-thumbnail>
-            <ion-label style="display: flex; align-items: center;">
-              <p>Acesso Rápido</p>
-            </ion-label>
-          </ion-item>
-        </swiper-slide>
-        <swiper-slide>
-          <ion-item style="width: 100%; border: none; --ion-item-padding-start: 0;">
-            <ion-thumbnail slot="start" style="width: 30px; height: 30px; margin-end: 10px;">
-              <ion-icon style="width: 100%; height: 100%" name="add-outline"></ion-icon>
-            </ion-thumbnail>
-            <ion-label style="display: flex; align-items: center;">
-              <p>Acesso Rápido</p>
-            </ion-label>
-          </ion-item>
-        </swiper-slide>
-        <swiper-slide>
-          <ion-item style="width: 100%; border: none; --ion-item-padding-start: 0;">
-            <ion-thumbnail slot="start" style="width: 30px; height: 30px; margin-end: 10px;">
-              <ion-icon style="width: 100%; height: 100%" name="add-outline"></ion-icon>
-            </ion-thumbnail>
-            <ion-label style="display: flex; align-items: center;">
-              <p>Acesso Rápido</p>
-            </ion-label>
-          </ion-item>
-        </swiper-slide>
-        <swiper-slide>
-          <ion-item style="width: 100%; border: none; --ion-item-padding-start: 0;">
-            <ion-thumbnail slot="start" style="width: 30px; height: 30px; margin-end: 10px;">
-              <ion-icon style="width: 100%; height: 100%" name="add-outline"></ion-icon>
-            </ion-thumbnail>
-            <ion-label style="display: flex; align-items: center;">
-              <p>Acesso Rápido</p>
-            </ion-label>
-          </ion-item>
-        </swiper-slide>
-        <swiper-slide>
-          <ion-item style="width: 100%; border: none; --ion-item-padding-start: 0;">
-            <ion-thumbnail slot="start" style="width: 30px; height: 30px; margin-end: 10px;">
-              <ion-icon style="width: 100%; height: 100%" name="add-outline"></ion-icon>
-            </ion-thumbnail>
-            <ion-label style="display: flex; align-items: center;">
-              <p>Acesso Rápido</p>
-            </ion-label>
-          </ion-item>
-        </swiper-slide>
-
-        <!-- Adicione mais slides conforme necessário -->
-      </swiper-container>
-
-    </ion-list>
-
+    <app-acesso-rapido></app-acesso-rapido>
     <ion-list lines="none">
       <ion-list-header>Destaques</ion-list-header>
       <!-- <ion-list-header>Mural de avisos</ion-list-header> -->
-      <swiper-container pager="false" #slider class="my-custom-slider ion-text-center">
+      <swiper-container pager="false" #slider class="my-custom-slider ion-text-center ion-padding">
         <swiper-slide>
-          <img src="https://static-images.ifood.com.br/image/upload/t_high,q_100/webapp/landing/landing-banner-1.png" />
+          <img src="assets/img/image-example.png" alt="Descrição da imagem">
         </swiper-slide>
         <swiper-slide>
-          <img src="https://static-images.ifood.com.br/image/upload/t_high,q_100/webapp/landing/landing-banner-2.png" />
-        </swiper-slide>
-        <swiper-slide>
-          <img src="https://static-images.ifood.com.br/image/upload/t_high,q_100/webapp/landing/landing-banner-3.png" />
+          <img src="assets/img/image-example-2.png" alt="Descrição da imagem">
         </swiper-slide>
       </swiper-container>
     </ion-list>
@@ -120,10 +22,10 @@
           <ion-card>
             <ion-item>
               <ion-thumbnail style="display: flex; justify-content: center; align-items: center;">
-                <ion-icon style="width: 100%; height: 40%" name="musical-notes"></ion-icon>
+                <ion-icon style="width: 100%; height: 40%" name="time-outline"></ion-icon>
               </ion-thumbnail>
               <ion-label>
-                <p>The Beatles</p>
+                <p>Horário de aulas</p>
               </ion-label>
             </ion-item>
           </ion-card>
@@ -132,10 +34,10 @@
           <ion-card>
             <ion-item>
               <ion-thumbnail style="display: flex; justify-content: center; align-items: center;">
-                <ion-icon style="width: 100%; height: 40%" name="musical-notes"></ion-icon>
+                <ion-icon style="width: 100%; height: 40%" name="restaurant-outline"></ion-icon>
               </ion-thumbnail>
               <ion-label>
-                <p>The Beatles</p>
+                <p>Merenda</p>
               </ion-label>
             </ion-item>
           </ion-card>
@@ -144,10 +46,10 @@
           <ion-card>
             <ion-item>
               <ion-thumbnail style="display: flex; justify-content: center; align-items: center;">
-                <ion-icon style="width: 100%; height: 40%" name="musical-notes"></ion-icon>
+                <ion-icon style="width: 100%; height: 40%" name="document-text-outline"></ion-icon>
               </ion-thumbnail>
               <ion-label>
-                <p>The Beatles</p>
+                <p>Boletim</p>
               </ion-label>
             </ion-item>
           </ion-card>
@@ -156,10 +58,10 @@
           <ion-card>
             <ion-item>
               <ion-thumbnail style="display: flex; justify-content: center; align-items: center;">
-                <ion-icon style="width: 100%; height: 40%" name="musical-notes"></ion-icon>
+                <ion-icon style="width: 100%; height: 40%" name="calendar-outline"></ion-icon>
               </ion-thumbnail>
               <ion-label>
-                <p>The Beatles</p>
+                <p>Eventos</p>
               </ion-label>
             </ion-item>
           </ion-card>
@@ -168,22 +70,10 @@
           <ion-card>
             <ion-item>
               <ion-thumbnail style="display: flex; justify-content: center; align-items: center;">
-                <ion-icon style="width: 100%; height: 40%" name="musical-notes"></ion-icon>
+                <ion-icon style="width: 100%; height: 40%" name="person-outline"></ion-icon>
               </ion-thumbnail>
               <ion-label>
-                <p>The Beatles</p>
-              </ion-label>
-            </ion-item>
-          </ion-card>
-        </ion-col>
-        <ion-col size="6">
-          <ion-card>
-            <ion-item>
-              <ion-thumbnail style="display: flex; justify-content: center; align-items: center;">
-                <ion-icon style="width: 100%; height: 40%" name="musical-notes"></ion-icon>
-              </ion-thumbnail>
-              <ion-label>
-                <p>The Beatles</p>
+                <p>Meus dados</p>
               </ion-label>
             </ion-item>
           </ion-card>
@@ -191,8 +81,9 @@
       </ion-row>
     </ion-list>
 
+
     <ion-list lines="none">
-      <ion-list-header>Novidades</ion-list-header>
+      <ion-list-header class="ion-padding">Novidades</ion-list-header>
 
       <ion-item button detail="false">
         <ion-avatar slot="start" style="width:45px; height:45px;">
