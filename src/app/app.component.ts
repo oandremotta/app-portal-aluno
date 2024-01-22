@@ -4,6 +4,7 @@ import { Store } from '@ngrx/store';
 import { register } from 'swiper/element/bundle';
 import * as fromRoot from './app.reducer';
 import { Observable } from 'rxjs';
+import { AuthService } from 'src/app/pages/autenticacao/auth.service';
 
 
 register();
@@ -16,12 +17,9 @@ register();
 })
 export class AppComponent implements OnInit {
   isLoading$?: Observable<boolean>;
-  constructor(private store: Store<fromRoot.State>) { }
+  constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
-    this.isLoading$ = this.store.select(fromRoot.getIsLoading);
-    this.isLoading$.subscribe(isLoading => {
-      console.log(isLoading);
-    });
+    this.authService.initAuthListener();
   }
 }

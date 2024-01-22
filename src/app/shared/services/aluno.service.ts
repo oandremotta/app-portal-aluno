@@ -1,16 +1,17 @@
-import { BehaviorSubject, Observable } from "rxjs";
+import { Observable } from "rxjs";
 import { HttpHeaders, HttpClient } from "@angular/common/http";
 import { environment } from "src/environments/environment";
 import { Injectable } from "@angular/core";
+import { Store } from "@ngrx/store";
+import * as fromRoot from '../../app.reducer';
+import * as Aluno from "../store/aluno.actions";
 
 
 @Injectable({
     providedIn: "root",
 })
-export class AutenticacaoService {
+export class AlunoService {
     private apiPhp = environment.apiphp;
-    // private currentUserSubject: BehaviorSubject<any>;
-    // public currentUser: Observable<any>;
 
     private username = 'multfacil';
     private password = '1234mudar';
@@ -25,13 +26,18 @@ export class AutenticacaoService {
         })
     };
 
-    constructor(private http: HttpClient) { }
+    constructor(private http: HttpClient, private store: Store) { }
 
-    login(
-        matricula: string,
-        senha: string,
-    ): Observable<any> {
-        let data = { matricula: matricula, senha: senha };
-        return this.http.post<any>(this.apiPhp.concat("login"), data, this.httpOptions);
+    public setAluno() {
+        const url = this.apiPhp.concat(`aluno/status`);
+        this.http.get<any>(url, { ...this.httpOptions }).subscribe({
+            next: (value) => {
+                localStorage.setItem('aluno', JSON.stringify(value));
+                this.store.dispatch(new Aluno.SetAluno(value));
+            },
+            error: (err) => {
+                console.error('Erro ao obter dados do aluno:', err);
+            }
+        });
     }
 }

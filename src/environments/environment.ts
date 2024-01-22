@@ -4,8 +4,10 @@
 
 export const environment = {
   production: false,
-  apiphp: "https://api.educafrancodarocha.com.br/api/v1/",
-  apiUrlCms: "https://api.educafrancodarocha.com.br/api/v1/",
+  apiphp: "https://api.educafrancodarocha.dev.localhost/api/v1/",
+  apiApp: "https://api.educafrancodarocha.dev.localhost/api/v2/app/aluno/",
+  apiUrlCms: "https://api.educafrancodarocha.dev.localhost/api/v1/",
+  apiJava: "http://ws.educafrancodarocha.dev.localhost:8443/",
   tenant: "francodarocha",
   nomeTenant: "Franco da Rocha",
   nome_extenso: "App Franco da Rocha",

@@ -2,56 +2,56 @@
   <!-- Logotipo -->
   <ion-row class="ion-justify-content-center ion-align-items-center ion-margin-vertical">
     <ion-col size="12" class="ion-text-center">
-      <img src="assets/img/{{environment.assetImgUri}}.png" />
+      <img src="assets/img/{{environment.assetImgUri}}.png" alt="Logo" />
     </ion-col>
   </ion-row>
 
+  <ion-row class="ion-justify-content-center ion-align-items-center ion-margin-vertical">
+    <ion-col size="12" class="ion-text-center">
+      <ion-title class="text">Entrar com Matrícula</ion-title>
+    </ion-col>
+  </ion-row>
 
-  <ion-col>
-    <ion-row class="ion-justify-content-center ion-align-items-center ion-margin-bottom">
-      <ion-col size="12" class="ion-text-center">
-        <ion-title class="text">Entrar com Matrícula</ion-title>
-      </ion-col>
-    </ion-row>
-
-    <!-- Campo RA -->
-    <ion-row class="ion-justify-content-center ion-align-items-center ion-margin-bottom">
-      <ion-col size="12" class="ion-text-center">
+  <!-- Formulário de Login -->
+  <ion-row class="ion-justify-content-center ion-align-items-center ion-margin-bottom">
+    <ion-col size="12" class="ion-text-center">
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <!-- Campo RA -->
         <ion-item>
           <ion-label position="floating">RA*</ion-label>
-          <ion-input [(ngModel)]="email" type="email"></ion-input>
+          <ion-input formControlName="username" type="text"></ion-input>
         </ion-item>
-      </ion-col>
-    </ion-row>
 
-    <!-- Campo Senha -->
-    <ion-row class="ion-justify-content-center ion-align-items-center ion-margin-bottom">
-      <ion-col size="12" class="ion-text-center">
+        <!-- Campo Senha -->
         <ion-item>
           <ion-label position="floating">Senha</ion-label>
-          <ion-input [(ngModel)]="password" type="password"></ion-input>
+          <ion-input formControlName="senha" type="password"></ion-input>
         </ion-item>
-      </ion-col>
-    </ion-row>
 
-    <!-- Botão de login -->
-    <ion-row class="ion-justify-content-center ion-align-items-center ion-margin-bottom">
-      <ion-col size="12" class="ion-text-center">
-        <ion-button expand="full" (click)="login()">Entrar</ion-button>
-        <div class="ion-margin-top ion-text-end">
-          <a href="ajuda">Precisa de Ajuda?</a>
+        <!-- Botão de login -->
+        @if(!(isLoading$ | async)){
+        <ion-button [disabled]="!loginForm.valid && loginForm.disabled === false" expand="full"
+          type="submit">Entrar</ion-button>
+        }@else {
+        <div class="mt-4">
+          <ion-spinner class="ion-margin-top"></ion-spinner>
         </div>
+        }
+      </form>
 
-      </ion-col>
-    </ion-row>
+      <!-- Link de Ajuda -->
+      <div class="ion-margin-top ion-text-end">
+        <a href="ajuda">Precisa de Ajuda?</a>
+      </div>
+    </ion-col>
+  </ion-row>
 
-    <ion-row class="ion-justify-content-center ion-align-items-center">
-      <ion-col size="12" class="ion-text-center">
-        <div class="ion-margin-top">
-          <ion-text>Não possui acesso?<br /> Entre em contato com sua escola.</ion-text>
-        </div>
-      </ion-col>
-    </ion-row>
-  </ion-col>
-
+  <!-- Mensagem para usuários sem acesso -->
+  <ion-row class="ion-justify-content-center ion-align-items-center">
+    <ion-col size="12" class="ion-text-center">
+      <div class="ion-margin-top">
+        <ion-text>Não possui acesso?<br /> Entre em contato com sua escola.</ion-text>
+      </div>
+    </ion-col>
+  </ion-row>
 </ion-content>

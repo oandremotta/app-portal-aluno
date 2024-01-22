@@ -2,7 +2,7 @@ import { CUSTOM_ELEMENTS_SCHEMA, Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
-import { EventosService } from 'src/services/eventos.service';
+import { EventosService } from 'src/app/pages/eventos/eventos.service';
 import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from 'src/app/components/header/header.component';
 
