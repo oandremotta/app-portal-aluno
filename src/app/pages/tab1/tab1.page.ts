@@ -4,8 +4,8 @@ import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } 
 import { IonicModule } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { HorarioDeAulasPage } from '../horario-de-aulas/horario-de-aulas.page';
-import { HeaderComponent } from '../componentes/header/header.component';
-import { AcessoRapidoComponent } from '../componentes/acesso-rapido/acesso-rapido.component';
+import { AcessoRapidoComponent } from 'src/app/components/acesso-rapido/acesso-rapido.component';
+import { HeaderComponent } from 'src/app/components/header/header.component';
 
 @Component({
   selector: 'app-tab1',

@@ -1,17 +1,16 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
-import { HeaderComponent } from '../componentes/header/header.component';
+import { HeaderComponent } from 'src/app/components/header/header.component';
 
 @Component({
-  selector: 'app-horario-de-aulas',
-  templateUrl: 'horario-de-aulas.page.html',
-  styleUrls: ['horario-de-aulas.page.scss'],
+  selector: 'app-carteirinha',
+  templateUrl: 'carteirinha.page.html',
+  styleUrls: ['carteirinha.page.scss'],
   standalone: true,
   imports: [IonicModule, CommonModule, FormsModule, ReactiveFormsModule, HeaderComponent]
 })
-export class HorarioDeAulasPage {
-  @Input() showHeader?: boolean = true;
+export class CarteirinhaPage {
   constructor() { }
 }

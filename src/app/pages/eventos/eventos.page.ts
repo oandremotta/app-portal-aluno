@@ -4,7 +4,7 @@ import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } 
 import { IonicModule } from '@ionic/angular';
 import { EventosService } from 'src/services/eventos.service';
 import { HttpClientModule } from '@angular/common/http';
-import { HeaderComponent } from '../componentes/header/header.component';
+import { HeaderComponent } from 'src/app/components/header/header.component';
 
 @Component({
   selector: 'app-eventos',
