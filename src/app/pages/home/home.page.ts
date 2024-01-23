@@ -9,16 +9,17 @@ import { HeaderComponent } from 'src/app/components/header/header.component';
 import * as fromRoot from '../../app.reducer';
 import { Store } from "@ngrx/store";
 import { Observable, Subscription } from 'rxjs';
+import { AlunoService } from 'src/app/shared/services/aluno.service';
 
 @Component({
-  selector: 'app-tab1',
-  templateUrl: 'tab1.page.html',
-  styleUrls: ['tab1.page.scss'],
+  selector: 'app-hom',
+  templateUrl: 'home.page.html',
+  styleUrls: ['home.page.scss'],
   standalone: true,
   imports: [IonicModule, CommonModule, FormsModule, ReactiveFormsModule, HorarioDeAulasPage, HeaderComponent, AcessoRapidoComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class Tab1Page implements OnInit {
+export class HomePage implements OnInit {
 
   currentSegment = 'inicio';
   aluno$!: Observable<any>;
@@ -28,13 +29,17 @@ export class Tab1Page implements OnInit {
   segmentChanged(event: any) {
     this.currentSegment = event.detail.value;
   }
-  constructor(private store: Store) {
+  constructor(private alunoService: AlunoService) {
   }
 
   ngOnInit() {
-    this.store.select(fromRoot.getAluno).subscribe(alunoState => {
-      this.aluno = alunoState.aluno;
-      console.log(this.aluno);
-    })
+    this.alunoService.getAluno().subscribe(
+      aluno => {
+        this.aluno = aluno;
+      },
+      error => {
+        console.error('Erro ao obter dados do aluno:', error);
+      }
+    );
   }
 }

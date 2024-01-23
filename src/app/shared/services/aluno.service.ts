@@ -1,4 +1,4 @@
-import { Observable } from "rxjs";
+import { Observable, Subject, of, share, tap } from "rxjs";
 import { HttpHeaders, HttpClient } from "@angular/common/http";
 import { environment } from "src/environments/environment";
 import { Injectable } from "@angular/core";
@@ -17,6 +17,9 @@ export class AlunoService {
     private password = '1234mudar';
     credentials = btoa(`${this.username}:${this.password}`);
 
+    public aluno: any;
+    public _aluno: Subject<any> = new Subject<any>();
+
     httpOptions = {
         headers: new HttpHeaders({
             'Content-Type': 'application/json',
@@ -28,16 +31,24 @@ export class AlunoService {
 
     constructor(private http: HttpClient, private store: Store) { }
 
-    public setAluno() {
-        const url = this.apiPhp.concat(`aluno/status`);
-        this.http.get<any>(url, { ...this.httpOptions }).subscribe({
-            next: (value) => {
-                localStorage.setItem('aluno', JSON.stringify(value));
-                this.store.dispatch(new Aluno.SetAluno(value));
-            },
-            error: (err) => {
-                console.error('Erro ao obter dados do aluno:', err);
-            }
-        });
+    aluno$: Observable<any> = this.http
+        .get<any>(this.apiPhp.concat('aluno/status'), this.httpOptions)
+        .pipe(
+            tap((aluno) => {
+                this.aluno = aluno;
+                this._aluno.next(aluno);
+            }),
+            share(),
+        );
+
+    getAluno(force = false): Observable<any> {
+        if (!force && this.aluno) {
+            return of(this.aluno);
+        }
+        this.aluno = null;
+        return this.aluno$
+    }
+    clearAluno() {
+        this.aluno = null;
     }
 }
