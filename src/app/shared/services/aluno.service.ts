@@ -12,6 +12,7 @@ import * as Aluno from "../store/aluno.actions";
 })
 export class AlunoService {
     private apiPhp = environment.apiphp;
+    private apiApp = environment.apiApp;
 
     private username = 'multfacil';
     private password = '1234mudar';
@@ -32,7 +33,7 @@ export class AlunoService {
     constructor(private http: HttpClient, private store: Store) { }
 
     aluno$: Observable<any> = this.http
-        .get<any>(this.apiPhp.concat('aluno/status'), this.httpOptions)
+        .get<any>(this.apiApp.concat('aluno'), this.httpOptions)
         .pipe(
             tap((aluno) => {
                 this.aluno = aluno;

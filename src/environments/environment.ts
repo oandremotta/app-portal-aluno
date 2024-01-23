@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   apiphp: "https://api.educafrancodarocha.dev.localhost/api/v1/",
-  apiApp: "https://api.educafrancodarocha.dev.localhost/api/v2/app/aluno/",
+  apiApp: "https://api.educafrancodarocha.dev.localhost/api/v2/app/",
   apiUrlCms: "https://api.educafrancodarocha.dev.localhost/api/v1/",
   apiJava: "http://ws.educafrancodarocha.dev.localhost:8443/",
   tenant: "francodarocha",
