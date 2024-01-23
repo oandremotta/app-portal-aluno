@@ -24,15 +24,17 @@ export class HomePage implements OnInit {
   currentSegment = 'inicio';
   aluno$!: Observable<any>;
   aluno: any;
+  isLoading$?: Observable<boolean>;
   private alunoSubscription!: Subscription;
 
   segmentChanged(event: any) {
     this.currentSegment = event.detail.value;
   }
-  constructor(private alunoService: AlunoService) {
+  constructor(private alunoService: AlunoService, private store: Store<fromRoot.State>) {
   }
 
-  ngOnInit() {    
+  ngOnInit() {
+    this.isLoading$ = this.store.select(fromRoot.getIsLoading);
     this.alunoService.getAluno().subscribe(
       aluno => {
         this.aluno = aluno.aluno;

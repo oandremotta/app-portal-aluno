@@ -1,4 +1,6 @@
-<app-header [title]=aluno.pessoa.nome></app-header>
+@if(!(isLoading$ | async)){
+<app-header [title]=aluno?.pessoa?.nome></app-header>
+}
 <ion-content [fullscreen]="true">
   <div>
     <!-- <ion-list-header>Mural de avisos</ion-list-header> -->

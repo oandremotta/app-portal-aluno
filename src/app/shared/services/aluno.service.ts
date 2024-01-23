@@ -1,11 +1,11 @@
-import { Observable, Subject, of, share, tap } from "rxjs";
+import { Observable, Subject, of } from "rxjs";
+import { tap, share, finalize } from "rxjs/operators";
 import { HttpHeaders, HttpClient } from "@angular/common/http";
 import { environment } from "src/environments/environment";
 import { Injectable } from "@angular/core";
 import { Store } from "@ngrx/store";
 import * as fromRoot from '../../app.reducer';
 import * as Aluno from "../store/aluno.actions";
-
 
 @Injectable({
     providedIn: "root",
@@ -20,6 +20,7 @@ export class AlunoService {
 
     public aluno: any;
     public _aluno: Subject<any> = new Subject<any>();
+    public isLoading: boolean = false;  // Adicionado o estado de isLoading
 
     httpOptions = {
         headers: new HttpHeaders({
@@ -35,11 +36,17 @@ export class AlunoService {
     aluno$: Observable<any> = this.http
         .get<any>(this.apiApp.concat('aluno'), this.httpOptions)
         .pipe(
+            tap(() => {
+                this.isLoading = true;  // Marcar como carregando antes da requisição
+            }),
             tap((aluno) => {
                 this.aluno = aluno;
                 this._aluno.next(aluno);
             }),
             share(),
+            finalize(() => {
+                this.isLoading = false;  // Marcar como não carregando após a conclusão (seja sucesso ou erro)
+            })
         );
 
     getAluno(force = false): Observable<any> {
@@ -47,8 +54,9 @@ export class AlunoService {
             return of(this.aluno);
         }
         this.aluno = null;
-        return this.aluno$
+        return this.aluno$;
     }
+
     clearAluno() {
         this.aluno = null;
     }
