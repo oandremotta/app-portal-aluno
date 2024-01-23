@@ -21,15 +21,16 @@ import { AlunoService } from 'src/app/shared/services/aluno.service';
 })
 export class HomePage implements OnInit {
 
-  currentSegment = 'inicio';
+  // currentSegment = 'inicio';
+  selecionarTurma!: boolean;
   aluno$!: Observable<any>;
   aluno: any;
   isLoading$?: Observable<boolean>;
   private alunoSubscription!: Subscription;
 
-  segmentChanged(event: any) {
-    this.currentSegment = event.detail.value;
-  }
+  // segmentChanged(event: any) {
+  //   this.currentSegment = event.detail.value;
+  // }
   constructor(private alunoService: AlunoService, private store: Store<fromRoot.State>) {
   }
 
@@ -38,7 +39,7 @@ export class HomePage implements OnInit {
     this.alunoService.getAluno().subscribe(
       aluno => {
         this.aluno = aluno.aluno;
-        console.log(this.aluno);
+        this.selecionarTurma = true;
       },
       error => {
         console.error('Erro ao obter dados do aluno:', error);
