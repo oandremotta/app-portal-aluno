@@ -32,10 +32,11 @@ export class HomePage implements OnInit {
   constructor(private alunoService: AlunoService) {
   }
 
-  ngOnInit() {
+  ngOnInit() {    
     this.alunoService.getAluno().subscribe(
       aluno => {
-        this.aluno = aluno;
+        this.aluno = aluno.aluno;
+        console.log(this.aluno);
       },
       error => {
         console.error('Erro ao obter dados do aluno:', error);

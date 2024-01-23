@@ -59,7 +59,6 @@ export class AuthService {
                 next: (value) => {
                     if (((value as any).access_token)) {
                         this.setTokenSession((value as any).access_token);
-                        this.alunoService.getAluno();
                         this.store.dispatch(new UI.StopLoading());
                         this.router.navigate(['tabs/tab1']);
                     } else {
